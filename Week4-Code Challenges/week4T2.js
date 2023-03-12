@@ -40,6 +40,33 @@ function comp(array1, array2) {
   //your code here
 }
 
+
+
+
+function comp(array1, array2){
+  // Check if any of the arrays is null
+  if (array1 == null || array2 == null) {
+    return false;
+  }
+  // Calculate the squares of the elements in array1
+  const squares = array1.map(x => x*x);
+  // Sort the arrays in ascending order
+  const sorted1 = squares.sort((a, b) => a - b);
+  const sorted2 = array2.sort((a, b) => a - b);
+  // Compare the sorted arrays element by element
+  for (let i = 0; i < sorted1.length; i++){
+    if (sorted1[i] !== sorted2[i]){
+      return false;
+    }
+  }
+  return true;
+}
+
+
+
+
+
+
 //If a or b are null, or one of them is longer than the other, the problem doesn't make sense so return false.
 function comp(array1, array2) {
   if (array1 === null || array2 === null) {
